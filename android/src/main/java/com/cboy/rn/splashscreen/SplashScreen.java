@@ -47,7 +47,7 @@ public class SplashScreen {
     /**
      * 关闭启动屏
      */
-    public static void hide(Activity activity) {
+    public static void hide(final Activity activity) {
         if (activity == null) activity = mActivity.get();
         if (activity == null) return;
 
