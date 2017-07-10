@@ -54,7 +54,7 @@ public class SplashScreen {
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                if (mSplashDialog != null && mSplashDialog.isShowing()) {
+                if (mSplashDialog != null && mSplashDialog.isShowing() && !activity.isFinishing()) {
                     mSplashDialog.dismiss();
                 }
             }
