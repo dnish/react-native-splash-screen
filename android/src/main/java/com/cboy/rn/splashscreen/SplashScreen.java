@@ -47,14 +47,16 @@ public class SplashScreen {
     /**
      * 关闭启动屏
      */
-    public static void hide(final Activity activity) {
+    public static void hide(Activity activity) {
         if (activity == null) activity = mActivity.get();
         if (activity == null) return;
+
+        final Activity checkActivity = activity;
 
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                if (mSplashDialog != null && mSplashDialog.isShowing() && !activity.isFinishing()) {
+                if (mSplashDialog != null && mSplashDialog.isShowing() && !checkActivity.isFinishing()) {
                     mSplashDialog.dismiss();
                 }
             }
